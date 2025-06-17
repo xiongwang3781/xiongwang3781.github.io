@@ -1,14 +1,14 @@
-/* Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-  color: #e0f7fa;
+  background: linear-gradient(
+    135deg,
+    #0c0f1c 0%,
+    #132044 40%,
+    #1d2e56 65%,
+    #2066b3 90%,
+    #3da1e3 100%
+  );
+  color: #222222;
   line-height: 1.6;
   min-height: 100vh;
 }
@@ -16,14 +16,18 @@ body {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 10px 4px;
 }
 
 header {
-  background-color: #004d66;
-  padding: 40px 20px;
+  background: linear-gradient(90deg, #05668d 0%, #00c6b6 100%);
+  padding: 6px 4px 6px 4px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  box-shadow:
+    0 5px 25px 0 rgba(0, 200, 255, 0.18),   /* 柔和的底部蓝色发光 */
+    0 6px 20px 0 rgba(0, 80, 160, 0.12),
+    0 5px 15px 0 rgba(0, 0, 0, 0.16);
+  border-bottom: 2.5px solid #0ff0fc33;    /* 可选：底部分割线，亮色，增加分层 */
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -31,82 +35,137 @@ header {
 
 header h1 {
   font-weight: 900;
-  font-size: 3rem;
+  font-size: 2rem;      /* 减小标题字号 */
   color: #00e5ff;
-  margin-bottom: 8px;
+  margin-bottom: 4px;
   text-shadow: 1px 1px 3px #002233;
 }
 
 header .subtitle {
-  font-size: 1.25rem;
+  font-size: 1rem;       /* 减小副标题 */
   font-weight: 500;
   color: #80deea;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   font-style: italic;
+}
+
+header .email {
+  font-size: 0.98rem;
+  color: #b9ffff;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+nav {
+  margin-top: 4px;
 }
 
 nav a {
   color: #a7ffeb;
   text-decoration: none;
-  margin: 0 20px;
+  margin: 0 12px;
   font-weight: 600;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
+  font-size: 1.03rem;
+  padding-bottom: 3px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.3s, color 0.2s;
+  outline: none;
 }
 
-nav a:hover {
-  color: #00e5ff;
-  text-shadow: 0 0 8px #00e5ff;
+nav a.active,
+nav a:hover,
+nav a:focus-visible {
+  border-bottom: 3px solid #1de9b6;
+  color: #1de9b6;
 }
 
+/* ---- 标题与区域间距精细调整 ---- */
 main {
-  margin-top: 40px;
-  padding-bottom: 80px;
+  margin-top: 10px;       /* 使主区域更紧凑 */
+  padding-bottom: 60px;
 }
 
+/* 卡片整体样式和字体 */
 .card {
-  background-color: rgba(0, 77, 102, 0.75);
-  border-radius: 12px;
-  padding: 30px 25px;
-  margin-bottom: 40px;
-  box-shadow: 0 8px 24px rgba(0, 188, 212, 0.4);
-  backdrop-filter: blur(6px);
+  background: #f8fcff;
+  color: #222222;
+  border-radius: 18px;
+  padding: 18px 20px 16px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 4px 24px rgba(0,80,120,0.08);
+  font-size: 1.08rem;
+  text-align: left;
 }
 
+/* 二级标题精细样式 */
 h2 {
   color: #00bcd4;
-  margin-bottom: 20px;
+  margin-top: 0;          /* 去除标题上方多余空间 */
+  margin-bottom: 10px;    /* 标题下方间距更紧凑 */
   border-bottom: 3px solid #00bcd4;
-  padding-bottom: 6px;
+  padding-bottom: 3px;
   font-weight: 800;
-  font-size: 2rem;
-  letter-spacing: 1px;
+  font-size: 1.38rem;
+  letter-spacing: 0.5px;
 }
 
+/* 无序列表及条目精细间距 */
 ul {
   list-style: none;
+  padding-left: 0;
+  margin: 0 0 4px 0;     /* 列表与下方元素间距减少 */
 }
-
 ul li {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
+  margin-bottom: 6px;    /* 更紧凑的条目间距 */
+  font-size: 1.08rem;    /* 和card字体保持一致 */
+}
+ul li strong {
+  color: #007f7f;
+  font-weight: 700;
 }
 
-ul li a {
-  color: #b2ebf2;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-ul li a:hover {
+a {
+  color: #00695c;
   text-decoration: underline;
-  color: #00e5ff;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #00897b;
+}
+em {
+  color: #888;
 }
 
-p {
-  font-size: 1.1rem;
-  color: #c0e9f6;
-  line-height: 1.5;
+/* section锚点跳转留出header高度 */
+section {
+  scroll-margin-top: 52px;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* 响应式优化（适配小屏） */
+@media (max-width: 600px) {
+  .container {
+    padding: 6px 1vw;
+  }
+  .card {
+    padding: 7px 3px 9px 3px;
+    font-size: 0.99rem;
+  }
+  h2 {
+    font-size: 1.03rem;
+    margin-bottom: 6px;
+  }
+  nav a {
+    font-size: 0.98rem;
+    margin: 0 6px;
+  }
+}
+.card ul,
+.card li,
+.card blockquote,
+.card p {
+  font-size: 1.08rem; 
 }
 
 canvas {
@@ -120,13 +179,51 @@ canvas {
 
 footer {
   text-align: center;
-  padding: 20px 10px;
+  padding: 4px 2px;          /* 上下padding显著缩小 */
   background: #003344;
   color: #00e5ff;
-  font-weight: 600;
-  font-size: 1rem;
+  font-weight: 500;          /* 字体稍微轻一点也显小 */
+  font-size: 0.94rem;        /* 字体更小 */
   position: fixed;
   bottom: 0;
   width: 100%;
   box-shadow: 0 -2px 10px rgba(0,188,212,0.5);
+  z-index: 100;
+  line-height: 1.2;          /* 适当控制行高 */
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.project-list li {
+  background: #f7fbfc;
+  border-radius: 9px;
+  padding: 14px 18px 10px 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 10px rgba(0, 120, 140, 0.06);
+  border-left: 4px solid #00bcd4;
+  transition: box-shadow 0.2s;
+}
+.project-list li:hover {
+  box-shadow: 0 8px 20px rgba(0, 188, 212, 0.13);
+  border-left: 4px solid #0097a7;
+}
+.proj-title {
+  font-size: 1.12rem;
+  color: #0097a7;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.proj-topic {
+  font-size: 1.08rem;
+  color: #222;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+.proj-meta {
+  font-size: 0.98rem;
+  color: #789;
+  font-style: italic;
 }
