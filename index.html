@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Xiong Wang – Mineral Physics & Geodynamics</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet" />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Xiong Wang</h1>
+    <p class="subtitle">Mineral Physics | High-Pressure Experiments | Seismic Anisotropy</p>
+    <nav>
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#fun">Stories</a>
+      <a href="#code">Code</a>
+      <a href="#chart-section">Progress</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section id="research" class="card">
+    <h2>Research Directions</h2>
+    <p>Focused on understanding Earth's deep interior via mineral physics, high-pressure deformation experiments, and geophysical modeling. Bridging laboratory results with seismic observations to unravel mantle processes.</p>
+  </section>
+
+  <section id="publications" class="card">
+    <h2>Selected Publications</h2>
+    <ul>
+      <li><a href="https://doi.org/xxxx" target="_blank" rel="noopener">Title 1: Understanding mantle anisotropy</a> – <em>Journal Name, 2023</em></li>
+      <li><a href="https://doi.org/yyyy" target="_blank" rel="noopener">Title 2: High-pressure phase transitions</a> – <em>Journal Name, 2022</em></li>
+    </ul>
+  </section>
+
+  <section id="fun" class="card">
+    <h2>Stories & Insights</h2>
+    <p>Field expeditions, lab life, and personal reflections from years of research in Earth Sciences.</p>
+  </section>
+
+  <section id="code" class="card">
+    <h2>Code & Projects</h2>
+    <p>Explore my open-source projects and data analysis scripts on <a href="https://github.com/xiongwang3781" target="_blank" rel="noopener">GitHub</a>.</p>
+  </section>
+
+  <section id="chart-section" class="card">
+    <h2>Research Progress</h2>
+    <canvas id="progressChart" width="800" height="400"></canvas>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 Xiong Wang. All rights reserved.</p>
+</footer>
+
+<script>
+  const ctx = document.getElementById('progressChart').getContext('2d');
+  const progressChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: ['2019', '2020', '2021', '2022', '2023'],
+      datasets: [{
+        label: 'Published Papers',
+        data: [2, 3, 4, 6, 5],
+        borderColor: '#00bcd4',
+        backgroundColor: 'rgba(0, 188, 212, 0.3)',
+        fill: true,
+        tension: 0.3,
+        pointRadius: 5,
+        pointHoverRadius: 8
+      }]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { labels: { color: '#004d66', font: { size: 16, weight: 'bold' } } },
+        tooltip: { mode: 'index', intersect: false }
+      },
+      scales: {
+        x: { ticks: { color: '#004d66', font: { size: 14 } }, grid: { display: false } },
+        y: { beginAtZero: true, ticks: { color: '#004d66', font: { size: 14 } } }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
