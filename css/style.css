@@ -22,7 +22,7 @@ body {
 header {
   background: 
     linear-gradient(90deg, #05668d 0%, #00c6b6 100%),
-    url('/imgs/header2.png') repeat-x center;
+    url('imgs/header2.png') repeat-x center;
   background-size: auto 100%; /* 图片高度自适应 header，高度撑满，宽度自动 */
   padding: 6px 4px 6px 4px;
   text-align: center;
