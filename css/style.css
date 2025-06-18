@@ -21,12 +21,8 @@ body {
 
 header {
   background:
-    url('../imgs/header2.png') left center/auto 100% no-repeat,                     /* 左侧图片 */
-    url('../imgs/header2.png') left 16% center/auto 100% no-repeat,                 /* 第二幅图，往右偏移 */
-    url('../imgs/header2.png') left 32% center/auto 100% no-repeat,                 /* 第三幅图，继续偏移 */
-    url('../imgs/header2.png') right center/auto 100% no-repeat,                    /* 右侧图片 */
-    url('../imgs/header2.png') right 16% center/auto 100% no-repeat,                /* 右侧第二幅图 */
-    url('../imgs/header2.png') right 32% center/auto 100% no-repeat,                /* 右侧第三幅图 */
+    url('../imgs/header_triple.png') left center/auto 100% no-repeat,                     /* 左侧图片 */
+    url('../imgs/header_triple.png') right center/auto 100% no-repeat,                    /* 右侧图片 */
     linear-gradient(90deg, #05668d 0%, #00c6b6 100%) center/100% 100% no-repeat;    /* 最底层-渐变 */
   padding: 6px 4px 6px 4px;
   text-align: center;
