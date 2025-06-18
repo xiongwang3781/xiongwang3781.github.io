@@ -233,3 +233,14 @@ footer {
   color: #789;
   font-style: italic;
 }
+
+.fake-link {
+  color: #00796b;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.fake-link:hover {
+  color: #00897b;
+  text-decoration: underline;
+}
