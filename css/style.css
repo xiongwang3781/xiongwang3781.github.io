@@ -21,9 +21,12 @@ body {
 
 header {
   background:
-    url('../imgs/header_triple.png') left center/auto 100% no-repeat,      /* 最上层-左图，左对齐 */
-    url('../imgs/header_triple.png') right center/auto 100% no-repeat,     /* 第二层-右图，右对齐 */
-    linear-gradient(90deg, #05668d 0%, #00c6b6 100%) center/100% 100% no-repeat;  /* 底层-渐变色 */
+    url('../imgs/header_triple.png') left center/auto 100% no-repeat,
+    url('../imgs/header_triple.png') right center/auto 100% no-repeat,
+    /* 右侧发光（径向渐变，透明过渡，位置右侧） */
+    radial-gradient(ellipse at 90% 50%, rgba(0,255,255,0.36) 0%, rgba(255,255,255,0.10) 50%, rgba(0,0,0,0) 100%),
+    /* 主线性渐变 */
+    linear-gradient(90deg, #05668d 0%, #00c6b6 90%, #ccf6ff 100%) center/100% 100% no-repeat;
   padding: 6px 4px 6px 4px;
   text-align: center;
   box-shadow:
