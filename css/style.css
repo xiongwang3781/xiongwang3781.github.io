@@ -20,16 +20,21 @@ body {
 }
 
 header {
-  background: 
-    url('../imgs/header2.png') repeat-x center;
-  background-size: auto 100%; /* 图片高度自适应 header，高度撑满，宽度自动 */
+  background:
+    linear-gradient(90deg, #05668d 0%, #00c6b6 100%) center/100% 100% no-repeat,    /* 最底层-渐变 */
+    url('../imgs/header2.png') left center/auto 100% no-repeat,                     /* 左侧图片 */
+    url('../imgs/header2.png') left 33% center/auto 100% no-repeat,                 /* 第二幅图，往右偏移 */
+    url('../imgs/header2.png') left 66% center/auto 100% no-repeat,                 /* 第三幅图，继续偏移 */
+    url('../imgs/header2.png') right center/auto 100% no-repeat,                    /* 右侧图片 */
+    url('../imgs/header2.png') right 33% center/auto 100% no-repeat,                /* 右侧第二幅图 */
+    url('../imgs/header2.png') right 66% center/auto 100% no-repeat;                /* 右侧第三幅图 */
   padding: 6px 4px 6px 4px;
   text-align: center;
   box-shadow:
-    0 5px 25px 0 rgba(0, 200, 255, 0.18),   /* 柔和的底部蓝色发光 */
+    0 5px 25px 0 rgba(0, 200, 255, 0.18),
     0 6px 20px 0 rgba(0, 80, 160, 0.12),
     0 5px 15px 0 rgba(0, 0, 0, 0.16);
-  border-bottom: 2.5px solid #0ff0fc33;    /* 可选：底部分割线，亮色，增加分层 */
+  border-bottom: 2.5px solid #0ff0fc33;
   position: sticky;
   top: 0;
   z-index: 1000;
