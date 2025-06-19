@@ -1,8 +1,8 @@
 body {
   font-family: 'Montserrat', sans-serif;
   background:
-    linear-gradient(rgba(12,16,28,0.80), rgba(31,66,124,0.77)), /* 可调整透明度与渐变 */
     url('../imgs/Body.JPG') no-repeat center center fixed;
+    linear-gradient(rgba(12,16,28,0.80), rgba(31,66,124,0.77)), /* 可调整透明度与渐变 */
   background-size: cover;
   color: #222222;
   line-height: 1.6;
