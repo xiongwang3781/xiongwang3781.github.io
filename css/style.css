@@ -1,13 +1,13 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background:
-    url('../imgs/Body.JPG') no-repeat center center fixed;
-    linear-gradient(rgba(12,16,28,0.80), rgba(31,66,124,0.77)), /* 可调整透明度与渐变 */
-  background-size: cover;
+  background: url('../imgs/body.png') no-repeat center center fixed;
+  background-size: 100vw auto;       /* 横向填满，纵向自适应，高度可能留白 */
+  background-color: #132044;         /* 留白区域底色与图片协调 */
   color: #222222;
   line-height: 1.6;
   min-height: 100vh;
 }
+
 .container {
   max-width: 900px;
   margin: 0 auto;
@@ -16,8 +16,8 @@ body {
 
 header {
   background:
-    url('../imgs/header_triple.png') left center/auto 100% no-repeat,
-    url('../imgs/header_triple.png') right center/auto 100% no-repeat,
+    url('../imgs/header_triple2.png') left center/auto 100% no-repeat,
+    url('../imgs/header_triple2.png') right center/auto 100% no-repeat,
     /* 右侧发光（径向渐变，透明过渡，位置右侧） */
     radial-gradient(ellipse at 90% 50%, rgba(0,255,255,0.36) 0%, rgba(255,255,255,0.10) 50%, rgba(0,0,0,0) 100%),
     /* 主线性渐变 */
