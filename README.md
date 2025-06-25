@@ -13,15 +13,13 @@ My work focuses on understanding Earth's deep interior through laboratory experi
 
 ## Repository Contents
 
-- **index.html** — Main homepage HTML file  
-- **css/** — Stylesheets and design assets  
-- Additional research projects and code will be added here.
+- Research projects and code will be added here.
 
 ---
 
 ## Contact
 
-Feel free to explore my GitHub profile and projects: [https://github.com/xiongwang3781](https://github.com/xiongwang3781)
+xiong.wang3781@outlook.com
 
 ---
 
