@@ -21,7 +21,7 @@ header {
   border-bottom: none;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 500;
 }
 
 header h1 {
@@ -52,7 +52,7 @@ nav a,
 .nav-link {
   color: #eaffff;
   text-decoration: none;
-  margin: 0 24px;         /* 控制导航项间距 */
+  margin: 0 20px;         /* 控制导航项间距 */
   font-weight: 700;
   font-size: 1.18rem;
   letter-spacing: 0.5px;
