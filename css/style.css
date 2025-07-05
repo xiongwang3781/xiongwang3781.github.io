@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: url('../imgs/body_main.png') no-repeat center center fixed;
+  background: url('../imgs/body_main.png') repeat center center fixed;
   background-size: 100vw auto;       /* 横向填满，纵向自适应，高度可能留白 */
   background-color: #132044;         /* 留白区域底色与图片协调 */
   color: #222222;
@@ -32,7 +32,16 @@ header .email,
 nav a {
   color: #eaffff !important;
   text-shadow: 1.5px 2px 8px #1a253a, 0 2px 12px #004d66;
+  margin: 0 18px;              /* 两侧间距拉大，原先是12px */
+  padding: 4px 0 4px 0;        /* 上下留白稍多 */
+  font-size: 1.19rem;          /* 字体略大更舒适（1.03→1.19） */
+  font-weight: 600;
+  letter-spacing: 0.03em;      /* 字母间距微调 */
+  transition: border-color 0.3s, color 0.2s;
+  border-bottom: 3px solid transparent;
+  background: none;
 }
+
 nav a.active,
 nav a:hover,
 nav a:focus-visible {
@@ -40,6 +49,7 @@ nav a:focus-visible {
   border-bottom: 3px solid #fff8bb;
   background: rgba(0,0,0,0.04);
 }
+
 
 /* ---- 标题与区域间距精细调整 ---- */
 main {
@@ -49,7 +59,7 @@ main {
 
 /* 卡片整体样式和字体 */
 .card {
-  background: rgba(255,255,255,0.84);
+  background: rgba(255,255,255,0.88);
   color: #222222;
   border-radius: 18px;
   padding: 18px 20px 16px 20px;
