@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: url('../imgs/body.png') no-repeat center center fixed;
+  background: url('../imgs/body2.png') no-repeat center center fixed;
   background-size: 100vw auto;       /* 横向填满，纵向自适应，高度可能留白 */
   background-color: #132044;         /* 留白区域底色与图片协调 */
   color: #222222;
