@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: url('../imgs/Body2.jpg') no-repeat center center fixed;
+  background: url('../imgs/body_main.png') no-repeat center center fixed;
   background-size: 100vw auto;       /* 横向填满，纵向自适应，高度可能留白 */
   background-color: #132044;         /* 留白区域底色与图片协调 */
   color: #222222;
@@ -15,69 +15,30 @@ body {
 }
 
 header {
-  background:
-    url('../imgs/header_triple2.png') left center/auto 100% no-repeat,
-    url('../imgs/header_triple2.png') right center/auto 100% no-repeat,
-    /* 右侧发光（径向渐变，透明过渡，位置右侧） */
-    radial-gradient(ellipse at 90% 50%, rgba(0,255,255,0.36) 0%, rgba(255,255,255,0.10) 50%, rgba(0,0,0,0) 100%),
-    /* 主线性渐变 */
-    linear-gradient(90deg, #05668d 0%, #00c6b6 90%, #ccf6ff 100%) center/100% 100% no-repeat;
+  background: url('../imgs/header_triple2.png') center center/auto 100% no-repeat;
+  /* ↑ 只显示中间一张图片，高度撑满 header，不重复 */
   padding: 6px 4px 6px 4px;
   text-align: center;
-  box-shadow:
-    0 5px 25px 0 rgba(0, 200, 255, 0.18),
-    0 6px 20px 0 rgba(0, 80, 160, 0.12),
-    0 5px 15px 0 rgba(0, 0, 0, 0.16);
-  border-bottom: 2.5px solid #0ff0fc33;
+  /* 不要 box-shadow */
+  border-bottom: none;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
-header h1 {
-  font-weight: 900;
-  font-size: 2rem;      /* 减小标题字号 */
-  color: #00e5ff;
-  margin-bottom: 4px;
-  text-shadow: 1px 1px 3px #002233;
-}
-
-header .subtitle {
-  font-size: 1rem;       /* 减小副标题 */
-  font-weight: 500;
-  color: #80deea;
-  margin-bottom: 8px;
-  font-style: italic;
-}
-
-header .email {
-  font-size: 0.98rem;
-  color: #b9ffff;
-  margin-bottom: 6px;
-  letter-spacing: 0.5px;
-}
-
-nav {
-  margin-top: 4px;
-}
-
+header h1,
+header .subtitle,
+header .email,
 nav a {
-  color: #a7ffeb;
-  text-decoration: none;
-  margin: 0 12px;
-  font-weight: 600;
-  font-size: 1.03rem;
-  padding-bottom: 3px;
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s, color 0.2s;
-  outline: none;
+  color: #eaffff !important;
+  text-shadow: 1.5px 2px 8px #1a253a, 0 2px 12px #004d66;
 }
-
 nav a.active,
 nav a:hover,
 nav a:focus-visible {
-  border-bottom: 3px solid #1de9b6;
-  color: #1de9b6;
+  color: #fff8bb !important;
+  border-bottom: 3px solid #fff8bb;
+  background: rgba(0,0,0,0.04);
 }
 
 /* ---- 标题与区域间距精细调整 ---- */
@@ -88,7 +49,7 @@ main {
 
 /* 卡片整体样式和字体 */
 .card {
-  background: #f8fcff;
+  background: rgba(255,255,255,0.84);
   color: #222222;
   border-radius: 18px;
   padding: 18px 20px 16px 20px;
