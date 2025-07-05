@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background: url('../imgs/body_main.png') repeat center center fixed;
+  background: url('../imgs/body_main.png') no-repeat center center fixed;
   background-size: 100vw auto;       /* 横向填满，纵向自适应，高度可能留白 */
   background-color: #132044;         /* 留白区域底色与图片协调 */
   color: #222222;
@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  background: url('../imgs/header_triple2.png') center center/auto 100% no-repeat;
+  background: url('../imgs/header_triple2.png') center center/auto 100% repeat-x;
   /* ↑ 只显示中间一张图片，高度撑满 header，不重复 */
   padding: 6px 4px 6px 4px;
   text-align: center;
