@@ -42,22 +42,25 @@ header .email {
 }
 
 nav {
-  margin-top: 12px;
+  margin-top: 14px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  flex-wrap: wrap;
 }
 
-nav a {
-  color: #eaffff !important;
-  font-size: 1.18rem;
+nav a,
+.nav-link {
+  color: #eaffff;
+  text-decoration: none;
+  margin: 0 24px;         /* 控制导航项间距 */
   font-weight: 700;
-  padding-bottom: 3px;
-  border-bottom: 3px solid transparent;
+  font-size: 1.18rem;
+  letter-spacing: 0.5px;
+  border-bottom: none;
+  background: none;
+  outline: none;
   transition: border-color 0.3s, color 0.2s;
-  text-shadow: 1.5px 2px 8px #1a253a, 0 2px 12px #004d66;
-  white-space: nowrap;
+  position: relative;
 }
 
 nav a.active,
@@ -65,7 +68,7 @@ nav a:hover,
 nav a:focus-visible {
   color: #fff8bb !important;
   border-bottom: 3px solid #fff8bb;
-  background: rgba(0,0,0,0.04);
+  background: none;
 }
 
 /* ---- 标题与区域间距精细调整 ---- */
