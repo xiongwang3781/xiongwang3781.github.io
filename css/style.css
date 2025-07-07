@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  width: 33vw;          /* 视口宽度的1/3 */
+  width: 50vw;          /* 视口宽度的1/3 */
   max-width: 600px;     /* 最大宽度限制，防止大屏太宽 */
   min-width: 320px;     /* 最小宽度适配手机 */
   margin: 0 auto;
@@ -17,20 +17,12 @@ body {
 }
 
 header {
-  background: url('../imgs/header_triple2.png') center center/auto 100% repeat-x;
-  height: 10vh;                 /* 高度固定为视口高度的10% */
-  min-height: 60px;            /* 防止在小屏下太矮，可选 */
-  max-height: 120px;            /* 防止极大屏时过高，可选 */
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
   padding: 0;
+  margin: 0;
   text-align: center;
-  border-bottom: none;
-  position: sticky;
-  top: 0;
-  z-index: 500;
-  display: flex;                /* 居中内容用flex */
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 header h1 {
