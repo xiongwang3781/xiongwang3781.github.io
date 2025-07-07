@@ -16,9 +16,9 @@ body {
 
 header {
   background: url('../imgs/header_triple2.png') center center/auto 100% repeat-x;
-  height: 20vh;                 /* 高度固定为视口高度的20% */
-  min-height: 108px;            /* 防止在小屏下太矮，可选 */
-  max-height: 260px;            /* 防止极大屏时过高，可选 */
+  height: 10vh;                 /* 高度固定为视口高度的10% */
+  min-height: 88px;            /* 防止在小屏下太矮，可选 */
+  max-height: 200px;            /* 防止极大屏时过高，可选 */
   padding: 0;
   text-align: center;
   border-bottom: none;
