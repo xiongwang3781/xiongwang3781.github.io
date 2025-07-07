@@ -17,8 +17,8 @@ body {
 header {
   background: url('../imgs/header_triple2.png') center center/auto 100% repeat-x;
   height: 10vh;                 /* 高度固定为视口高度的10% */
-  min-height: 88px;            /* 防止在小屏下太矮，可选 */
-  max-height: 200px;            /* 防止极大屏时过高，可选 */
+  min-height: 60px;            /* 防止在小屏下太矮，可选 */
+  max-height: 120px;            /* 防止极大屏时过高，可选 */
   padding: 0;
   text-align: center;
   border-bottom: none;
@@ -48,21 +48,28 @@ header .email {
 }
 nav {
   margin-top: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;      /* 让菜单永不折行 */
+  overflow-x: auto;         /* 超出横向滚动 */
+  width: 100%;
 }
 
 nav a,
 .nav-link {
   color: #eaffff;
   text-decoration: none;
-  margin: 0 20px;         /* 控制导航项间距 */
+  margin: 0 12px;         /* 间距适当缩小，不易折行 */
   font-weight: 700;
-  font-size: 1.18rem;
+  font-size: 1.07rem;     /* 字号比原来小一点 */
   letter-spacing: 0.5px;
   border-bottom: none;
   background: none;
   outline: none;
   transition: border-color 0.3s, color 0.2s;
   position: relative;
+  white-space: nowrap;
 }
 
 nav a.active,
