@@ -9,7 +9,9 @@ body {
 }
 
 .container {
-  max-width: 900px;
+  width: 33vw;          /* 视口宽度的1/3 */
+  max-width: 600px;     /* 最大宽度限制，防止大屏太宽 */
+  min-width: 320px;     /* 最小宽度适配手机 */
   margin: 0 auto;
   padding: 10px 4px;
 }
@@ -51,8 +53,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  white-space: nowrap;      /* 让菜单永不折行 */
-  overflow-x: auto;         /* 超出横向滚动 */
+  white-space: nowrap;
+  overflow-x: auto;
   width: 100%;
 }
 
@@ -60,10 +62,10 @@ nav a,
 .nav-link {
   color: #eaffff;
   text-decoration: none;
-  margin: 0 12px;         /* 间距适当缩小，不易折行 */
+  margin: 0 10px;         /* 控制导航项间距 */
   font-weight: 700;
-  font-size: 1.07rem;     /* 字号比原来小一点 */
-  letter-spacing: 0.5px;
+  font-size: 1.08rem;
+  letter-spacing: 0.4px;
   border-bottom: none;
   background: none;
   outline: none;
@@ -79,16 +81,21 @@ nav a:focus-visible {
   border-bottom: 3px solid #fff8bb;
   background: none;
 }
-@media (max-width: 700px) {
+
+@media (max-width: 900px) {
+  .container {
+    width: 94vw;
+    max-width: 98vw;
+    min-width: 0;
+    padding: 6px 1vw;
+  }
   nav a,
   .nav-link {
-    font-size: 1rem;
-    margin: 0 10px;
-  }
-  header h1 {
-    font-size: 1.3rem;
+    font-size: 0.96rem;
+    margin: 0 5px;
   }
 }
+
 
 /* ---- 标题与区域间距精细调整 ---- */
 main {
