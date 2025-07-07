@@ -187,7 +187,7 @@ canvas {
 }
 
 footer {
-  height: 3vh;                       /* 占屏幕高度 4% */
+  height: 3.5vh;                       /* 占屏幕高度 4% */
   padding: 0 10px;                   /* 适当减小 padding */
   background: rgba(0, 51, 68, 0.80); /* 半透明背景 */
   color: #00e5ff;
