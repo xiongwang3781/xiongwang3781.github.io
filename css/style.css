@@ -189,7 +189,7 @@ canvas {
 footer {
   text-align: center;
   padding: 4px 2px;                 /* 上下 padding */
-  background: rgba(0, 51, 68, 0.80);/* 半透明：0.80 可根据需要调 0.6~0.9 */
+  background: rgba(0, 51, 68, 0.90);/* 半透明：0.80 可根据需要调 0.6~0.9 */
   color: #00e5ff;
   font-weight: 500;
   font-size: 0.94rem;
@@ -198,7 +198,7 @@ footer {
   width: 100%;
   box-shadow: 0 -2px 10px rgba(0,188,212,0.5);
   z-index: 100;
-  line-height: 1.2;
+  line-height: 1.0;
   backdrop-filter: blur(4px);       /* 可选：给透明背景增加磨砂感 */
 }
 
