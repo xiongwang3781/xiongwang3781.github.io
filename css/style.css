@@ -9,7 +9,7 @@ body {
 }
 
 .container {
-  max-width: 45vw;       /* 视口宽度的45% */
+  max-width: 43vw;       /* 视口宽度的45% */
   min-width: 320px;      /* 可选：防止手机屏幕太窄 */
   margin: 0 auto;
   padding: 10px 4px;
