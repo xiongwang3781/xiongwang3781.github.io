@@ -396,110 +396,141 @@
     });
   });
 
-  // Chart.js cumulative chart
-  const years = ['2019', '2020', '2021', '2022', '2023', '2024'];
-  const papers = [1, 1, 1, 0, 1, 2];
-  const citations = [43, 19, 14, 0, 4, 2];
-  function cumulativeSum(arr) {
-    const result = [];
-    arr.reduce((sum, val, i) => result[i] = sum + val, 0);
-    return result;
-  }
-  const cumulativePapers = cumulativeSum(papers);
-  const cumulativeCitations = cumulativeSum(citations);
-  const ctx = document.getElementById('progressChart').getContext('2d');
-  const gradientPapers = ctx.createLinearGradient(0, 0, 0, 400);
-  gradientPapers.addColorStop(0, 'rgba(0,188,212,0.6)');
-  gradientPapers.addColorStop(1, 'rgba(0,188,212,0.1)');
-  const gradientCitations = ctx.createLinearGradient(0, 0, 0, 400);
-  gradientCitations.addColorStop(0, 'rgba(255,152,0,0.6)');
-  gradientCitations.addColorStop(1, 'rgba(255,152,0,0.1)');
-  const progressChart = new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: years,
-      datasets: [
-        {
-          label: 'Publications',
-          data: cumulativePapers,
-          borderColor: '#00bcd4',
-          backgroundColor: gradientPapers,
-          fill: true,
-          tension: 0.3,
-          pointRadius: 6,
-          pointHoverRadius: 10,
-          pointStyle: 'circle',
-          borderWidth: 3,
-          yAxisID: 'y',
-        },
-        {
-          label: 'Citations',
-          data: cumulativeCitations,
-          borderColor: '#ff9800',
-          backgroundColor: gradientCitations,
-          fill: true,
-          tension: 0.3,
-          pointRadius: 6,
-          pointHoverRadius: 10,
-          pointStyle: 'rectRot',
-          borderWidth: 3,
-          yAxisID: 'y1',
-        }
-      ]
+// Chart.js cumulative chart
+const years = ['2019', '2020', '2021', '2022', '2023', '2024'];
+const papers = [1, 1, 1, 0, 1, 2];
+const citations = [43, 19, 14, 0, 4, 2];
+function cumulativeSum(arr) {
+  const result = [];
+  arr.reduce((sum, val, i) => result[i] = sum + val, 0);
+  return result;
+}
+const cumulativePapers = cumulativeSum(papers);
+const cumulativeCitations = cumulativeSum(citations);
+
+const ctx = document.getElementById('progressChart').getContext('2d');
+const gradientPapers = ctx.createLinearGradient(0, 0, 0, 400);
+gradientPapers.addColorStop(0, 'rgba(0,188,212,0.6)');
+gradientPapers.addColorStop(1, 'rgba(0,188,212,0.1)');
+const gradientCitations = ctx.createLinearGradient(0, 0, 0, 400);
+gradientCitations.addColorStop(0, 'rgba(255,152,0,0.6)');
+gradientCitations.addColorStop(1, 'rgba(255,152,0,0.1)');
+
+const progressChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [
+      {
+        label: 'Publications',
+        data: cumulativePapers,
+        borderColor: '#00bcd4',
+        backgroundColor: gradientPapers,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 6,
+        pointHoverRadius: 10,
+        pointStyle: 'circle',
+        borderWidth: 3,
+        yAxisID: 'y',
+      },
+      {
+        label: 'Citations',
+        data: cumulativeCitations,
+        borderColor: '#ff9800',
+        backgroundColor: gradientCitations,
+        fill: true,
+        tension: 0.3,
+        pointRadius: 6,
+        pointHoverRadius: 10,
+        pointStyle: 'rectRot',
+        borderWidth: 3,
+        yAxisID: 'y1',
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    animation: {
+      duration: 1500,
+      easing: 'easeOutQuart'
     },
-    options: {
-      responsive: true,
-      animation: {
-        duration: 1500,
-        easing: 'easeOutQuart'
-      },
-      interaction: { mode: 'nearest', intersect: false },
-      plugins: {
-        legend: {
-          labels: {
-            color: '#004d66',
-            font: { size: 16, weight: 'bold' }
-          },
-          onClick: (e, legendItem, legend) => {
-            const index = legendItem.datasetIndex;
-            const ci = legend.chart;
-            const meta = ci.getDatasetMeta(index);
-            meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
-            ci.update();
-          }
+    interaction: { mode: 'nearest', intersect: false },
+    plugins: {
+      legend: {
+        labels: {
+          color: '#004d66',
+          font: { size: 16, weight: 'bold' }
         },
-        tooltip: {
-          mode: 'index',
-          intersect: false,
-          callbacks: {
-            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y,
-            title: ctx => 'Year: ' + ctx[0].label
-          }
+        onClick: (e, legendItem, legend) => {
+          const index = legendItem.datasetIndex;
+          const ci = legend.chart;
+          const meta = ci.getDatasetMeta(index);
+          meta.hidden = meta.hidden === null ? !ci.data.datasets[index].hidden : null;
+          ci.update();
         }
       },
-      scales: {
-        y: {
-          type: 'linear',
-          position: 'left',
-          ticks: { color: '#004d66', font: { size: 14 } },
-          title: { display: true, text: 'Publications', color: '#004d66' },
-          beginAtZero: true
+      tooltip: {
+        mode: 'index',
+        intersect: false,
+        callbacks: {
+          label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y,
+          title: ctx => 'Year: ' + ctx[0].label
+        }
+      }
+    },
+    scales: {
+      y: {
+        type: 'linear',
+        position: 'left',
+        beginAtZero: true,
+        ticks: {
+          color: '#004d66',
+          font: { size: 14 }
         },
-        y1: {
-          type: 'linear',
-          position: 'right',
-          ticks: { color: '#b35400', font: { size: 14 } },
-          title: { display: true, text: 'Citations', color: '#b35400' },
-          grid: { drawOnChartArea: false },
-          beginAtZero: true
+        title: {
+          display: true,
+          text: 'Publications',
+          color: '#004d66',
+          font: { size: 14 }
         },
-        x: {
-          ticks: { color: '#004d66', font: { size: 14 } },
-          grid: { display: false }
+        grid: {
+          display: false,
+          drawBorder: false
+        }
+      },
+      y1: {
+        type: 'linear',
+        position: 'right',
+        beginAtZero: true,
+        ticks: {
+          color: '#b35400',
+          font: { size: 14 }
+        },
+        title: {
+          display: true,
+          text: 'Citations',
+          color: '#b35400',
+          font: { size: 14 }
+        },
+        grid: {
+          display: false,
+          drawBorder: false
+        }
+      },
+      x: {
+        ticks: {
+          color: '#004d66',
+          font: { size: 14 }
+        },
+        grid: {
+          display: false,
+          drawBorder: false
         }
       }
     }
-  });
+  }
+});
 </script>
 </body>
 </html>
