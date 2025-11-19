@@ -22,18 +22,20 @@ html {
 body {
   margin: 0;
   background-color: var(--bg-deep);
-  
-  /* 关键修改：这里使用了两层背景 */
-  /* 第一层：linear-gradient 是半透明深蓝遮罩 (0.85 到 0.95 透明度) */
-  /* 第二层：url('../imgs/body_main.png') 是你原本的图片 */
+
+  /* ==== 核心修改 ==== */
+  /* 1. 遮罩层改为纯黑 (rgba(0,0,0...))，避免让星云偏色 */
+  /* 2. 透明度大幅降低 (0.2 到 0.4)，既保留图片原色，又保证文字能看清 */
   background-image: 
-    url('../imgs/body_main.png');
-    
-  /* 保持背景固定和覆盖 */
+    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)), 
+    url('../imgs/body_main.png'); /* 记得确保你的图片文件名叫这个，或者修改这里 */
+
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
-  background-size: cover; /* 或者使用你原来的 100vw auto，但 cover 效果通常更好 */
+  
+  /* 确保图片覆盖整个屏幕，不会因为图片比例问题出现白边 */
+  background-size: cover; 
   
   color: var(--text-main);
   font-family: var(--font-body);
@@ -356,5 +358,6 @@ footer {
   .cursor-dot, .cursor-outline { display: none; }
   body { cursor: auto; }
 }
+
 
 
