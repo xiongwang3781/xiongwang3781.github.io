@@ -1,35 +1,71 @@
-/* ======== 互动特效：精密磁吸光标 ======== */
+/* =========================================
+   Xiong Wang Academic Home - Style Sheet
+   Theme: Deep Earth & Modern Tech
+   ========================================= */
 
-/* 1. 隐藏默认鼠标 (只在非触屏设备上) */
+/* ---- 1. 全局变量与重置 ---- */
+:root {
+  --bg-deep: #0a192f;        /* 深邃蓝背景 */
+  --bg-card: rgba(17, 34, 64, 0.75); /* 卡片半透明背景 */
+  --primary: #64ffda;        /* 荧光青（主色调） */
+  --text-main: #ccd6f6;      /* 主文字（灰白） */
+  --text-sec: #8892b0;       /* 次要文字（蓝灰） */
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Calibre', 'Inter', 'San Francisco', sans-serif;
+  --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-deep);
+  /* 默认使用深色渐变，如果你有背景图，请取消下一行的注释 */
+  background-image: linear-gradient(135deg, #0a192f 0%, #112240 100%); 
+  /* background-image: url('../imgs/body_main.png'); */
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden; /* 防止光标溢出导致滚动条 */
+}
+
+/* ---- 2. 炫酷光标系统 (Magnetic Cursor) ---- */
+
+/* 隐藏默认鼠标 (仅在支持悬停的设备上) */
 @media (hover: hover) and (pointer: fine) {
   body {
-    cursor: none; /* 隐藏系统原始鼠标 */
+    cursor: none;
   }
   a, button, .nav-link, .project-item {
-    cursor: none; /* 隐藏链接上的手型 */
+    cursor: none;
   }
 }
 
-/* 2. 核心光标点 (中心实心点) */
+/* 核心光标点 */
 .cursor-dot {
   width: 8px;
   height: 8px;
-  background-color: var(--primary); /* 荧光青 */
+  background-color: var(--primary);
   border-radius: 50%;
   position: fixed;
   top: 0;
   left: 0;
   transform: translate(-50%, -50%);
   z-index: 9999;
-  pointer-events: none; /* 穿透点击 */
+  pointer-events: none;
   box-shadow: 0 0 10px var(--primary);
 }
 
-/* 3. 跟随光标圈 (外围圆环) */
+/* 跟随光标圈 */
 .cursor-outline {
   width: 40px;
   height: 40px;
-  border: 1px solid rgba(100, 255, 218, 0.5); /* 半透明青色描边 */
+  border: 1px solid rgba(100, 255, 218, 0.5);
   border-radius: 50%;
   position: fixed;
   top: 0;
@@ -40,22 +76,289 @@
   transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
-/* 4. 交互状态：当鼠标悬停在链接上时 */
+/* 交互状态：悬停 */
 body.hovering .cursor-outline {
   width: 60px;
   height: 60px;
-  background-color: rgba(100, 255, 218, 0.1); /* 淡淡的填充 */
+  background-color: rgba(100, 255, 218, 0.1);
   border-color: var(--primary);
   box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
 }
-
 body.hovering .cursor-dot {
-  opacity: 0; /* 悬停时中心点消失，变成聚焦模式 */
+  opacity: 0;
 }
 
-/* 5. 点击状态：按下时的收缩效果 */
+/* 交互状态：点击 */
 body.clicking .cursor-outline {
   width: 30px;
   height: 30px;
   background-color: var(--primary);
+}
+
+/* ---- 3. 布局容器 ---- */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- 4. 头部与导航 (Glassmorphism) ---- */
+header {
+  padding: 60px 0 40px;
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0;
+  color: #e6f1ff;
+  letter-spacing: -1px;
+  text-shadow: 0 4px 20px rgba(100, 255, 218, 0.2);
+}
+
+header .email {
+  color: var(--primary);
+  font-family: monospace;
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+  position: sticky;
+  top: 20px;
+  z-index: 100;
+}
+
+.nav-box {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  padding: 8px 10px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+}
+
+.nav-link {
+  color: var(--text-main);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 8px 16px;
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--bg-deep);
+  background: var(--primary);
+}
+
+/* ---- 5. 卡片风格 (Glass Card) ---- */
+main {
+  margin-top: 40px;
+  padding-bottom: 80px;
+}
+
+.card {
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 40px;
+  margin-bottom: 40px;
+  transition: var(--transition);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.8);
+  border-color: var(--primary);
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  font-family: var(--font-heading);
+  color: #e6f1ff;
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+h2::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 200px;
+  background: rgba(100, 255, 218, 0.3);
+  margin-left: 20px;
+}
+
+h3 {
+  color: var(--text-main);
+  font-size: 1.3rem;
+  margin-top: 30px;
+  margin-bottom: 15px;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition);
+}
+a.highlight-link {
+  display: inline-block;
+}
+a.highlight-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+a.highlight-link:hover::after {
+  width: 100%;
+}
+
+/* ---- 6. 内容模块细节 ---- */
+.intro-box {
+  font-size: 1.1rem;
+  color: var(--text-main);
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* 列表样式 */
+ul {
+  list-style: none;
+  padding: 0;
+}
+ul li {
+  position: relative;
+  padding-left: 25px;
+  margin-bottom: 12px;
+  color: var(--text-sec);
+}
+ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+/* 项目网格 */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+.project-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 25px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+.project-item:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-3px);
+}
+.proj-title {
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.proj-topic {
+  color: #e6f1ff;
+  margin-bottom: 12px;
+}
+.proj-meta {
+  font-size: 0.85rem;
+  font-family: monospace;
+  color: var(--text-sec);
+}
+
+/* 文献列表 */
+.pub-list li {
+  padding-left: 0;
+  display: flex;
+  gap: 15px;
+  align-items: baseline;
+}
+.pub-list li::before { content: none; }
+.pub-index {
+  font-family: monospace;
+  color: var(--primary);
+  min-width: 40px;
+  text-align: right;
+}
+.pub-content {
+  color: var(--text-sec);
+  flex: 1;
+}
+.pub-content strong {
+  color: #e6f1ff;
+}
+.pub-title {
+  color: #e6f1ff;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+/* 标签云 */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.tag-cloud a {
+  background: rgba(100, 255, 218, 0.1);
+  color: var(--primary);
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+.tag-cloud a:hover {
+  background: rgba(100, 255, 218, 0.2);
+}
+
+/* 链接网格 */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+/* 页脚 */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-sec);
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+/* ---- 7. 响应式适配 ---- */
+@media (max-width: 768px) {
+  header h1 { font-size: 2.5rem; }
+  .links-grid { grid-template-columns: 1fr; }
+  .card { padding: 25px; }
+  nav { position: relative; top: 0; }
+  /* 移动端取消自定义鼠标，因为没有悬停 */
+  .cursor-dot, .cursor-outline { display: none; }
+  body { cursor: auto; }
 }
