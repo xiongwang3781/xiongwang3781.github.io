@@ -1,6 +1,6 @@
 /* =========================================
    Xiong Wang Academic Home - Style Sheet
-   Theme: Deep Earth & Modern Tech
+   Theme: Deep Earth & Modern Tech (V2)
    ========================================= */
 
 /* ---- 1. 全局变量与重置 ---- */
@@ -22,7 +22,7 @@ html {
 body {
   margin: 0;
   background-color: var(--bg-deep);
-  /* 默认使用深色渐变，如果你有背景图，请取消下一行的注释 */
+  /* 如果有背景图，请取消下一行的注释 */
   background-image: linear-gradient(135deg, #0a192f 0%, #112240 100%); 
   /* background-image: url('../imgs/body_main.png'); */
   background-size: cover;
@@ -31,22 +31,15 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   font-size: 16px;
-  overflow-x: hidden; /* 防止光标溢出导致滚动条 */
+  overflow-x: hidden; 
 }
 
-/* ---- 2. 炫酷光标系统 (Magnetic Cursor) ---- */
-
-/* 隐藏默认鼠标 (仅在支持悬停的设备上) */
+/* ---- 2. 炫酷光标系统 ---- */
 @media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-  a, button, .nav-link, .project-item {
-    cursor: none;
-  }
+  body { cursor: none; }
+  a, button, .nav-link, .project-item { cursor: none; }
 }
 
-/* 核心光标点 */
 .cursor-dot {
   width: 8px;
   height: 8px;
@@ -61,7 +54,6 @@ body {
   box-shadow: 0 0 10px var(--primary);
 }
 
-/* 跟随光标圈 */
 .cursor-outline {
   width: 40px;
   height: 40px;
@@ -76,7 +68,6 @@ body {
   transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
 }
 
-/* 交互状态：悬停 */
 body.hovering .cursor-outline {
   width: 60px;
   height: 60px;
@@ -84,16 +75,8 @@ body.hovering .cursor-outline {
   border-color: var(--primary);
   box-shadow: 0 0 20px rgba(100, 255, 218, 0.3);
 }
-body.hovering .cursor-dot {
-  opacity: 0;
-}
-
-/* 交互状态：点击 */
-body.clicking .cursor-outline {
-  width: 30px;
-  height: 30px;
-  background-color: var(--primary);
-}
+body.hovering .cursor-dot { opacity: 0; }
+body.clicking .cursor-outline { width: 30px; height: 30px; background-color: var(--primary); }
 
 /* ---- 3. 布局容器 ---- */
 .container {
@@ -102,7 +85,7 @@ body.clicking .cursor-outline {
   padding: 0 20px;
 }
 
-/* ---- 4. 头部与导航 (Glassmorphism) ---- */
+/* ---- 4. 头部与导航 (优化版) ---- */
 header {
   padding: 60px 0 40px;
   text-align: center;
@@ -125,45 +108,55 @@ header .email {
   margin-top: 10px;
 }
 
+/* 导航栏容器 */
 nav {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 30px;
+  margin-top: 35px;
   position: sticky;
   top: 20px;
   z-index: 100;
 }
 
+/* 优化的玻璃导航条 */
 .nav-box {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 8px 10px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(17, 34, 64, 0.85); /* 更深一点的底色 */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 6px 8px; /* 紧凑一点 */
+  border-radius: 12px; /* 方圆角，更现代 */
+  border: 1px solid rgba(100, 255, 218, 0.15);
   box-shadow: 0 10px 30px -10px rgba(2, 12, 27, 0.7);
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
+/* 导航链接样式 */
 .nav-link {
-  color: var(--text-main);
+  color: var(--text-main); /* 默认灰白 */
   text-decoration: none;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   padding: 8px 16px;
-  border-radius: 30px;
-  transition: var(--transition);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  background: transparent; /* 默认透明 */
 }
 
+/* 悬停与激活状态：荧光背景 */
 .nav-link:hover, .nav-link.active {
-  color: var(--bg-deep);
-  background: var(--primary);
+  color: var(--bg-deep); /* 文字变深色 */
+  background: var(--primary); /* 背景变亮青色 */
+  box-shadow: 0 0 15px rgba(100, 255, 218, 0.4); /* 发光效果 */
+  transform: translateY(-1px);
 }
 
 /* ---- 5. 卡片风格 (Glass Card) ---- */
 main {
-  margin-top: 40px;
+  margin-top: 50px;
   padding-bottom: 80px;
 }
 
@@ -209,6 +202,8 @@ h3 {
   font-size: 1.3rem;
   margin-top: 30px;
   margin-bottom: 15px;
+  border-left: 4px solid var(--primary);
+  padding-left: 12px;
 }
 
 a {
@@ -228,9 +223,7 @@ a.highlight-link::after {
   background: var(--primary);
   transition: width 0.3s;
 }
-a.highlight-link:hover::after {
-  width: 100%;
-}
+a.highlight-link:hover::after { width: 100%; }
 
 /* ---- 6. 内容模块细节 ---- */
 .intro-box {
@@ -240,7 +233,6 @@ a.highlight-link:hover::after {
   line-height: 1.8;
 }
 
-/* 列表样式 */
 ul {
   list-style: none;
   padding: 0;
@@ -258,7 +250,6 @@ ul li::before {
   color: var(--primary);
 }
 
-/* 项目网格 */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -280,22 +271,16 @@ ul li::before {
   font-size: 1.1rem;
   margin-bottom: 8px;
 }
-.proj-topic {
-  color: #e6f1ff;
-  margin-bottom: 12px;
-}
-.proj-meta {
-  font-size: 0.85rem;
-  font-family: monospace;
-  color: var(--text-sec);
-}
+.proj-topic { color: #e6f1ff; margin-bottom: 12px; }
+.proj-meta { font-size: 0.85rem; font-family: monospace; color: var(--text-sec); }
 
-/* 文献列表 */
+/* 文献列表 - 完整列表优化 */
 .pub-list li {
   padding-left: 0;
   display: flex;
   gap: 15px;
   align-items: baseline;
+  margin-bottom: 18px; /* 增加间距 */
 }
 .pub-list li::before { content: none; }
 .pub-index {
@@ -303,22 +288,32 @@ ul li::before {
   color: var(--primary);
   min-width: 40px;
   text-align: right;
+  opacity: 0.8;
 }
 .pub-content {
   color: var(--text-sec);
   flex: 1;
 }
-.pub-content strong {
-  color: #e6f1ff;
-}
+.pub-content strong { color: #e6f1ff; } /* 作者高亮 */
 .pub-title {
   color: #e6f1ff;
   font-weight: 600;
-  display: inline-block;
+  display: block; /* 标题独占一行 */
   margin-bottom: 4px;
 }
+.pub-meta {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #8892b0;
+}
 
-/* 标签云 */
+/* 链接网格 */
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
 .tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -336,14 +331,6 @@ ul li::before {
   background: rgba(100, 255, 218, 0.2);
 }
 
-/* 链接网格 */
-.links-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-/* 页脚 */
 footer {
   text-align: center;
   padding: 20px;
@@ -352,13 +339,12 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ---- 7. 响应式适配 ---- */
+/* 响应式 */
 @media (max-width: 768px) {
   header h1 { font-size: 2.5rem; }
   .links-grid { grid-template-columns: 1fr; }
   .card { padding: 25px; }
-  nav { position: relative; top: 0; }
-  /* 移动端取消自定义鼠标，因为没有悬停 */
+  nav { top: 0; }
   .cursor-dot, .cursor-outline { display: none; }
   body { cursor: auto; }
 }
