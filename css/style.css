@@ -22,11 +22,20 @@ html {
 body {
   margin: 0;
   background-color: var(--bg-deep);
-  /* 如果有背景图，请取消下一行的注释 */
-  background-image: linear-gradient(135deg, #0a192f 0%, #112240 100%); 
-  /* background-image: url('../imgs/body_main.png'); */
-  background-size: cover;
+  
+  /* 关键修改：这里使用了两层背景 */
+  /* 第一层：linear-gradient 是半透明深蓝遮罩 (0.85 到 0.95 透明度) */
+  /* 第二层：url('../imgs/body_main.png') 是你原本的图片 */
+  background-image: 
+    linear-gradient(rgba(10, 25, 47, 0.85), rgba(17, 34, 64, 0.95)), 
+    url('../imgs/body_main.png');
+    
+  /* 保持背景固定和覆盖 */
+  background-repeat: no-repeat;
+  background-position: center center;
   background-attachment: fixed;
+  background-size: cover; /* 或者使用你原来的 100vw auto，但 cover 效果通常更好 */
+  
   color: var(--text-main);
   font-family: var(--font-body);
   line-height: 1.6;
@@ -348,3 +357,4 @@ footer {
   .cursor-dot, .cursor-outline { display: none; }
   body { cursor: auto; }
 }
+
