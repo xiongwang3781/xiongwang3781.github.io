@@ -27,7 +27,6 @@ body {
   /* 第一层：linear-gradient 是半透明深蓝遮罩 (0.85 到 0.95 透明度) */
   /* 第二层：url('../imgs/body_main.png') 是你原本的图片 */
   background-image: 
-    linear-gradient(rgba(10, 25, 47, 0.85), rgba(17, 34, 64, 0.95)), 
     url('../imgs/body_main.png');
     
   /* 保持背景固定和覆盖 */
@@ -357,4 +356,5 @@ footer {
   .cursor-dot, .cursor-outline { display: none; }
   body { cursor: auto; }
 }
+
 
