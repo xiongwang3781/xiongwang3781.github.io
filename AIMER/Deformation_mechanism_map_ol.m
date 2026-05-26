@@ -1,8 +1,9 @@
 % -----------------------------------------------------------------------------
 % Author: Xiong Wang
 % Date:   2025-06-09
-% Purpose: Generate deformation mechanism map for dry olivine at T=1223 K, P=1.5 GPa,
-%          overlay experimental grain‐size vs. stress data from multiple locations.
+% Purpose: Generate a deformation mechanism map for dry olivine at T=1223 K,
+%          P=1.5 GPa, and overlay experimental grain-size vs. stress data from
+%          multiple locations.
 % -----------------------------------------------------------------------------
 
 % Clear workspace and figures
@@ -10,30 +11,30 @@ clearvars;
 close all;
 
 %% Constants
-R       = 8.314;        % Universal gas constant [J/(mol·K)]
+R       = 8.314;        % Universal gas constant [J/(mol K)]
 T       = 1223;         % Temperature [K]
 P       = 1.5;          % Pressure [GPa] (used in activation energy)
 
-% Flow‐law parameters (Warren & Hansen, 2023)
+% Flow-law parameters (Warren & Hansen, 2023)
 % Dislocation creep
-A_dis   = 1.1e5;        
-n_dis   = 3.5;          
-Q_dis   = (530 + 15*P)*1e3;  
+A_dis   = 1.1e5;
+n_dis   = 3.5;
+Q_dis   = (530 + 15*P)*1e3;
 
 % Diffusion creep
-A_diff  = 10^7.6;       
-n_diff  = 1;            
-p_diff  = 3;            
-Q_diff  = (375 + 1.5*6)*1e3;  
+A_diff  = 10^7.6;
+n_diff  = 1;
+p_diff  = 3;
+Q_diff  = (375 + 1.5*6)*1e3;
 
 % Grain-boundary sliding (GBS)
-A_gbs   = 10^4.8;       
-n_gbs   = 2.9;          
-p_gbs   = 0.7;          
-Q_gbs   = (445 + 15*P)*1e3;  
+A_gbs   = 10^4.8;
+n_gbs   = 2.9;
+p_gbs   = 0.7;
+Q_gbs   = (445 + 15*P)*1e3;
 
 % Generate grid of grain sizes and stresses
-grain_size = logspace(0, 4, 400);    % Grain size [µm]
+grain_size = logspace(0, 4, 400);    % Grain size [um]
 stress     = logspace(-1, 2, 400);   % Differential stress [MPa]
 [GS, SS]   = meshgrid(grain_size, stress);
 
@@ -56,20 +57,21 @@ rate_gbs(dominant~=3)  = NaN;
 
 % Plot deformation mechanism map
 figure('Color','w');
+
 % Filled contours for dominant mechanisms
 contourf(GS, SS, dominant, [0.5 1.5 2.5 3.5], 'LineColor','k','LineWidth',1.5);
 colormap([0.4 0.76 0.65; 0.99 0.55 0.39; 0.55 0.63 0.79]);
 hold on;
 
-% Strain‐rate contour levels
+% Strain-rate contour levels
 levels = logspace(-18, -9, 10);
 
-% Overlay strain‐rate contours (dashed)
+% Overlay strain-rate contours (dashed)
 contour(GS, SS, rate_dis,  levels, 'LineColor','k', 'LineStyle','--', 'LineWidth',1, 'HandleVisibility','off');
 [Cdiff, hDiff] = contour(GS, SS, rate_diff, levels, 'LineColor','k', 'LineStyle','--', 'LineWidth',1);
 contour(GS, SS, rate_gbs,  levels, 'LineColor','k', 'LineStyle','--', 'LineWidth',1, 'HandleVisibility','off');
 
-% Label diffusion‐creep contours only
+% Label diffusion-creep contours only
 clabel(Cdiff, hDiff, 'FontSize',12, 'LabelSpacing',1000);
 
 % Annotate regions

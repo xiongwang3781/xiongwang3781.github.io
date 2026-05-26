@@ -3,419 +3,383 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Xiong Wang | Earth Science Research</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <meta name="description" content="Xiong Wang's research homepage on rock rheology, microstructure, HPHT experiments, EBSD/MTEX, and AI-assisted Earth science coding." />
+  <title>Xiong Wang | Research Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-
-  <div class="cursor-dot" id="cursor-dot"></div>
-  <div class="cursor-outline" id="cursor-outline"></div>
-
-  <header>
-    <div class="container">
-      <h1>Xiong Wang</h1>
-      <p class="email">xiong.wang3781@outlook.com</p>
-    </div>
-    
-    <nav>
-      <div class="nav-box">
-        <a href="#research" class="nav-link active">Research</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#publications" class="nav-link">Publications</a>
-        <a href="#fun" class="nav-link">News</a>
-        <a href="#code" class="nav-link">Code</a>
-        <a href="#ai" class="nav-link">AI Tools</a>
-        <a href="#link" class="nav-link">Links</a>
-        <a href="#progress" class="nav-link">Progress</a>
-      </div>
+  <header class="site-header">
+    <a class="brand" href="#about" aria-label="Xiong Wang homepage">
+      <span>Xiong Wang</span>
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#about" class="nav-link active">About</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#publications" class="nav-link">Publications</a>
+      <a href="#aimer" class="nav-link">AIMER / Code</a>
+      <a href="#progress" class="nav-link">Progress</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </header>
 
-  <main class="container">
+  <main>
+    <section id="about" class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Rock rheology &middot; Microstructure &middot; HPHT experiments</p>
+        <h1>Xiong Wang</h1>
+        <p class="hero-title">Earth scientist studying how rocks deform, record stress, and shape the dynamics of the lithosphere.</p>
+        <p class="hero-copy">
+          I connect laboratory deformation experiments, mineral microstructures, EBSD/MTEX analysis, and geophysical observations to understand the mechanical behavior of the deep crust and upper mantle.
+        </p>
+        <div class="hero-actions" aria-label="Contact and profile links">
+          <a class="button button-primary" href="mailto:xiong.wang3781@outlook.com">Email</a>
+          <a class="button button-secondary" href="https://github.com/xiongwang3781" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </div>
+    </section>
 
-    <section id="research" class="card">
-      <h2>Research Focus</h2>
-      <div class="intro-box">
+    <section class="metrics" aria-label="Research summary metrics">
+      <div class="metric">
+        <span class="metric-value">6</span>
+        <span class="metric-label">Publications</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">2</span>
+        <span class="metric-label">Active grants</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">4</span>
+        <span class="metric-label">Research areas</span>
+      </div>
+      <div class="metric">
+        <span class="metric-value">AIMER</span>
+        <span class="metric-label">Open-source project</span>
+      </div>
+    </section>
+
+    <section id="research" class="section section-light">
+      <div class="section-heading">
+        <p class="eyebrow">Research</p>
+        <h2>From mineral-scale fabrics to lithosphere-scale behavior</h2>
         <p>
-          Hi, I’m <a href="https://github.com/xiongwang3781/xiongwang3781.github.io/blob/main/Resume_Xiong_Wang20250621.pdf" target="_blank" class="highlight-link">Xiong Wang</a>.
-          I uncover the hidden stories of the Earth’s lithosphere by studying rocks, minerals, and their microstructures.
+          My work uses experimental and analytical approaches to reveal how minerals and rocks deform under high-temperature and high-pressure conditions.
         </p>
       </div>
-      
-      <ul>
-        <li>Combines <strong>laboratory deformation experiments</strong> and <strong>field investigations</strong> to explore mineral microstructures and rheology.</li>
-        <li>Links <strong>mineral physics experiments</strong> with <strong>geophysical data</strong> to reveal dynamic processes shaping the Earth’s lithosphere.</li>
-        <li>Expertise in <a href="https://mtex-toolbox.github.io/" target="_blank" class="highlight-link">MTEX</a> for EBSD data analysis.</li>
-        <li>Leading <strong style="color: var(--primary);">AIMER</strong> (AI-assisted Microstructure Evolution in Rheology) for intelligent data analysis.</li>
-      </ul>
-      
-      <p style="margin-top: 25px; font-style: italic; color: var(--primary); text-align: center; opacity: 0.8;">
-        "Unveiling the ever-changing Earth beneath our feet through Lab, Data, and AI."
-      </p>
-    </section>
 
-    <section id="projects" class="card">
-      <h2>Projects</h2>
-      <div class="project-grid">
-        <div class="project-item">
-          <div class="proj-title">NSFC 青年项目</div>
-          <div class="proj-topic">Rheological Properties of Calcic-amphibole (HPHT)</div>
-          <div class="proj-meta">No. 42302242 · 2024-2026 · PI</div>
-        </div>
-        <div class="project-item">
-          <div class="proj-title">CPSF 面上项目 (Plagioclase)</div>
-          <div class="proj-topic">Rheology of Plagioclase at High-T & High-P</div>
-          <div class="proj-meta">No. 2024M753023 · 2024-Present · PI</div>
-        </div>
-        <div class="project-item">
-          <div class="proj-title">CPSF 面上项目 (Tibet)</div>
-          <div class="proj-topic">Rheology of Calcic-amphibole in Deep Crust</div>
-          <div class="proj-meta">No. 2021M701563 · 2021-2022 · PI</div>
-        </div>
+      <div class="research-grid">
+        <article class="research-card">
+          <span class="card-index">01</span>
+          <h3>Rock Rheology</h3>
+          <p>Quantifying deformation mechanisms and rheological properties of crustal and mantle minerals under laboratory conditions.</p>
+        </article>
+        <article class="research-card">
+          <span class="card-index">02</span>
+          <h3>Microstructure</h3>
+          <p>Reading mineral fabrics, grain-scale textures, and deformation records to interpret mechanical history in natural and experimental samples.</p>
+        </article>
+        <article class="research-card">
+          <span class="card-index">03</span>
+          <h3>EBSD / MTEX</h3>
+          <p>Using high-resolution EBSD and MTEX workflows to connect crystallographic preferred orientation with seismic and rheological properties.</p>
+        </article>
+        <article class="research-card">
+          <span class="card-index">04</span>
+          <h3>AI-Enhanced Coding</h3>
+          <p>Building AI-assisted tools for faster, clearer, and more reproducible analysis of microstructure and deformation datasets.</p>
+        </article>
       </div>
     </section>
 
-    <section id="publications" class="card">
-      <h2>Publications</h2>
-      <ul class="pub-list">
-        <li>
-          <div class="pub-index">[12]</div>
-          <div class="pub-content">
-            <span class="pub-title">The Origin of Lunar Basalts Constrained by Fe-Ti-Rich Melt Interaction with the Lunar Mantle</span>
-            <strong>Wang, X.</strong>, Zhang, J.F., and Jing Z.C.<br>
-            <span class="pub-meta">In preparation.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[11]</div>
-          <div class="pub-content">
-            <span class="pub-title">The partition coefficients of trace elements between olivine, orthopyroxene, clinopyroxene, and high-Ti basaltic melt at lunar mantle condition</span>
-            <strong>Wang, X.</strong>, Zhang, J.F., and Jing Z.C.<br>
-            <span class="pub-meta">In preparation.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[10]</div>
-          <div class="pub-content">
-            <span class="pub-title">Crustal Seismic Anisotropy, Viscosity, and Hydration in Continental Orogens: Insights from the Gangdese Arc Crust in Southern Tibet</span>
-            <strong>Wang, X.</strong>, Luo, B.J., and Zhang, J.F.<br>
-            <span class="pub-meta">In preparation.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[09]</div>
-          <div class="pub-content">
-            <span class="pub-title">Thermoelastic Properties of Amphibole in the Deep Continental Crust</span>
-            <strong>Wang, X.</strong>, Jing Z.C., Zhang, J.F., Chunyin Zhou and Luo Y.H.<br>
-            <span class="pub-meta">In preparation.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[08]</div>
-          <div class="pub-content">
-            <span class="pub-title">Water-driven Mineralogical Transformations Weaken the Mid-to-lower Crust of the Southern Tibet</span>
-            <strong>Wang, X.</strong>, Zhang, J.F., Jing, Z.C., and Luo Y.H.<br>
-            <span class="pub-meta">Under review.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[07]</div>
-          <div class="pub-content">
-            <span class="pub-title">Amphibole Fabric and Seismic Anisotropy under Plastic Deformation: Insights into the Composition and Structure of Deep Crust in the southern Tibet</span>
-            <strong>Wang, X.</strong>, Zhang, J.F., and Luo Y.H.<br>
-            <span class="pub-meta">Under review.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[06]</div>
-          <div class="pub-content">
-            <a href="https://doi.org/10.1029/2024GL112270" target="_blank" class="pub-title">Thermoelastic Properties of Seifertite at High Pressures and Temperatures: Implications for Negative Velocity Discontinuities in the D" Layer</a>
-            Liu, T., <strong>Wang, X.</strong>, Pu, C., and Jing Z.C.<br>
-            <span class="pub-meta">Geophysical Research Letter, 51(23), 2024.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[05]</div>
-          <div class="pub-content">
-            <a href="https://doi.org/10.1029/2024GC011807" target="_blank" class="pub-title">Influence of Grain Size Evolution on Mantle Plume and LLSVP Dynamics</a>
-            Liu, Y., Yang, T., Wang, K., <strong>Wang, X.</strong>, and Li, Y.<br>
-            <span class="pub-meta">Geochemistry, Geophysics, Geosystems, 25(11), 2024.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[04]</div>
-          <div class="pub-content">
-            <a href="https://doi.org/10.1029/2022GL102320" target="_blank" class="pub-title">Experimental Evidence for a Weak Calcic-Amphibole-Rich Deep Crust in Orogens</a>
-            <strong>Wang, X.</strong>, Zhang, J.F., Tommasi, A., Lopez-Sanchez, M., Jing Z.C., Shi F., Liu W.L. and Barou F.<br>
-            <span class="pub-meta">Geophysical Research Letter, 50, e2022GL102320, 2023.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[03]</div>
-          <div class="pub-content">
-            <a href="https://doi.org/10.1016/j.tecto.2021.228869" target="_blank" class="pub-title">Microstructure and Seismic Properties of Amphibole-rich Rocks from the Deep Crust in Southern Tibet</a>
-            <strong>Wang, X.</strong>, Zhang J.F., Tommasi A., Jing Z.C. and Yuan M.S.<br>
-            <span class="pub-meta">Tectonophysics, 811: 228869, 2021.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[02]</div>
-          <div class="pub-content">
-            <a href="https://doi.org/10.1029/2019JB018700" target="_blank" class="pub-title">Petrofabrics and Seismic Properties of Himalayan Amphibolites: Implications for a Thick Anisotropic Deep Crust Beneath the Tibetan Plateau</a>
-            Li W.J, Zhang, J.F., <strong>Wang, X.</strong>, Wang Y., Wu X. and Hu Z.C.<br>
-            <span class="pub-meta">Journal of Geophysical Research: Solid Earth, 125(8): 1-14, 2020.</span>
-          </div>
-        </li>
-        <li>
-          <div class="pub-index">[01]</div>
-          <div class="pub-content">
-            <a href="https://doi.org/10.1029/2019JB018392" target="_blank" class="pub-title">Adakite-Like Potassic Magmatism and Crust-Mantle Interaction in a Postcollisional Setting: An Experimental Study of Melting Beneath the Tibetan Plateau</a>
-            <strong>Wang, X.</strong>, Zhang J.F., Rushmer T., Adam J., Turner S. and Xu W.<br>
-            <span class="pub-meta">Journal of Geophysical Research: Solid Earth, 124(12): 12782-12798, 2019.</span>
-          </div>
-        </li>
-      </ul>
-    </section>
+    <section id="projects" class="section">
+      <div class="section-heading narrow">
+        <p class="eyebrow">Funded Projects</p>
+        <h2>Current research support</h2>
+      </div>
 
-    <section id="fun" class="card">
-      <h2>News (TB)</h2>
-      <p style="color: var(--text-sec);">
-        Field expeditions, lab life, and personal reflections from years of research in Earth Sciences.
-      </p>
-    </section>
-    
-    <section id="code" class="card">
-      <h2>Open Source (AIMER)</h2>
-      <p style="margin-bottom: 20px;">
-        Scripts available on <a href="https://github.com/xiongwang3781/xiongwang3781.github.io/tree/main/AIMER" target="_blank" class="highlight-link">GitHub</a>.
-      </p>
-      
-      <div class="links-grid">
-        <div>
-          <h3>Matlab Scripts</h3>
-          <ul>
-            <li><a href="https://github.com/xiongwang3781/xiongwang3781.github.io/blob/main/AIMER/Deformation_mechanism_map_ol.m" target="_blank">Olivine deformation mechanism map</a></li>
-            <li><a href="https://github.com/xiongwang3781/xiongwang3781.github.io/blob/main/AIMER/Griggs_data_reduction_cug_v2.m" target="_blank">Griggs data reduction in CUG Wuhan</a></li>
-            <li><a href="https://github.com/xiongwang3781/xiongwang3781.github.io/blob/main/AIMER/Diffusion_time_fitting.m" target="_blank">Element diffusion fitting</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Python Scripts</h3>
-          <ul>
-            <li><a href="#" style="opacity: 0.5; cursor: not-allowed;">Coming soon</a></li>
-          </ul>
-        </div>
+      <div class="project-list">
+        <article class="project-item">
+          <div>
+            <p class="project-kicker">NSFC / National Natural Science Foundation of China</p>
+            <h3>Experimental study on the rheological properties of calcic-amphibole at high temperature and high pressure</h3>
+          </div>
+          <dl class="project-meta">
+            <div><dt>Grant</dt><dd>No. 42302242</dd></div>
+            <div><dt>Period</dt><dd>Jan 2024 - Dec 2026</dd></div>
+            <div><dt>Role</dt><dd>PI</dd></div>
+            <div><dt>Budget</dt><dd>300,000 RMB</dd></div>
+          </dl>
+        </article>
+
+        <article class="project-item">
+          <div>
+            <p class="project-kicker">CPSF / China Postdoctoral Science Foundation</p>
+            <h3>Experimental study on the rheological properties of plagioclase at high temperature and high pressure</h3>
+          </div>
+          <dl class="project-meta">
+            <div><dt>Grant</dt><dd>No. 2024M753023</dd></div>
+            <div><dt>Period</dt><dd>Jun 2024 - present</dd></div>
+            <div><dt>Role</dt><dd>PI</dd></div>
+            <div><dt>Budget</dt><dd>80,000 RMB</dd></div>
+          </dl>
+        </article>
       </div>
     </section>
 
-    <section id="ai" class="card">
-      <h2>AI Toolkit</h2>
-      <p style="margin-bottom:15px;">Commonly used AI tools for research and productivity:</p>
-      <div class="tag-cloud">
-        <a href="https://chat.openai.com/" target="_blank">ChatGPT (OpenAI)</a>
-        <a href="https://gemini.google.com/" target="_blank">Gemini (Google)</a>
-        <a href="https://grok.x.ai/" target="_blank">Grok (Twitter)</a>
-        <a href="https://notebooklm.google/" target="_blank">NotebookLM (Google)</a>
-        <a href="https://claude.ai/" target="_blank">Claude (Anthropic)</a>
-        <a href="https://www.cursor.com/" target="_blank">Cursor</a>
-        <a href="https://segment-anything.com/" target="_blank">Segment-anything (Meta AI)</a>
-        <a href="https://qianwen.aliyun.com/" target="_blank">Qwen (通义千问)</a>
-        <a href="https://www.deepseek.com/" target="_blank">DeepSeek (深度求索)</a>
-        <a href="https://geogpt.zero2x.org/" target="_blank">GeoGPT (之江实验室)</a>
-        <a href="https://www.kimi.com/" target="_blank">KIMI (月之暗面)</a>
+    <section id="publications" class="section section-light">
+      <div class="section-heading">
+        <p class="eyebrow">Publications</p>
+        <h2>Selected papers and recent work</h2>
+      </div>
+
+      <div class="publication-feature">
+        <p class="publication-year">Highlighted</p>
+        <h3>Experimental Evidence for a Weak Calcic-Amphibole-Rich Deep Crust in Orogens</h3>
+        <p><strong>Wang, X.</strong>, Zhang, J.F., Tommasi, A., Lopez-Sanchez, M., Jing Z.C., Shi F., Liu W.L. and Barou F.</p>
+        <p><em>Geophysical Research Letters, 50, e2022GL102320, 2023.</em></p>
+        <a href="https://doi.org/10.1029/2022GL102320" target="_blank" rel="noopener">Read via DOI</a>
+      </div>
+
+      <ol class="publication-list">
+        <li>
+          <span class="publication-year">2024</span>
+          <div>
+            <p>Liu, T., <strong>Wang, X.</strong>, Pu, C., and Jing Z.C.</p>
+            <a href="https://doi.org/10.1029/2024GL112270" target="_blank" rel="noopener">Thermoelastic Properties of Seifertite at High Pressures and Temperatures: Implications for Negative Velocity Discontinuities in the D&quot; Layer</a>
+            <em>Geophysical Research Letters, 51(23).</em>
+          </div>
+        </li>
+        <li>
+          <span class="publication-year">2024</span>
+          <div>
+            <p>Liu, Y., Yang, T., Wang, K., <strong>Wang, X.</strong>, and Li, Y.</p>
+            <a href="https://doi.org/10.1029/2024GC011807" target="_blank" rel="noopener">Influence of Grain Size Evolution on Mantle Plume and LLSVP Dynamics</a>
+            <em>Geochemistry, Geophysics, Geosystems, 25(11).</em>
+          </div>
+        </li>
+        <li>
+          <span class="publication-year">2021</span>
+          <div>
+            <p><strong>Wang, X.</strong>, Zhang J.F., Tommasi A., Jing Z.C. and Yuan M.S.</p>
+            <a href="https://doi.org/10.1016/j.tecto.2021.228869" target="_blank" rel="noopener">Microstructure and Seismic Properties of Amphibole-rich Rocks from the Deep Crust in Southern Tibet</a>
+            <em>Tectonophysics, 811: 228869.</em>
+          </div>
+        </li>
+        <li>
+          <span class="publication-year">2020</span>
+          <div>
+            <p>Li W.J., Zhang, J.F., <strong>Wang, X.</strong>, Wang Y., Wu X. and Hu Z.C.</p>
+            <a href="https://doi.org/10.1029/2019JB018700" target="_blank" rel="noopener">Petrofabrics and Seismic Properties of Himalayan Amphibolites: Implications for a Thick Anisotropic Deep Crust Beneath the Tibetan Plateau</a>
+            <em>Journal of Geophysical Research: Solid Earth, 124(12): 12782-12798.</em>
+          </div>
+        </li>
+        <li>
+          <span class="publication-year">2019</span>
+          <div>
+            <p><strong>Wang, X.</strong>, Zhang J.F., Rushmer T., Adam J., Turner S. and Xu W.</p>
+            <a href="https://doi.org/10.1029/2019JB018392" target="_blank" rel="noopener">Adakite-Like Potassic Magmatism and Crust-Mantle Interaction in a Postcollisional Setting: An Experimental Study of Melting Beneath the Tibetan Plateau</a>
+            <em>Journal of Geophysical Research: Solid Earth, 124(12): 12782-12798.</em>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section id="aimer" class="section aimer-section">
+      <div class="aimer-visual" aria-hidden="true"></div>
+      <div class="aimer-content">
+        <p class="eyebrow">AIMER / Code</p>
+        <h2>AI-Driven Microstructure Evolution in Rheology</h2>
+        <p>
+          AIMER is an open-source direction for combining Earth-science domain knowledge, microstructure analysis, and AI-assisted programming. The current code materials include MATLAB workflows for deformation mechanism maps and experimental data visualization.
+        </p>
+        <ul class="code-points">
+          <li>Deformation mechanism map generation for dry olivine.</li>
+          <li>Grain-size and differential-stress data overlays.</li>
+          <li>Reusable research-code patterns for transparent analysis.</li>
+        </ul>
+        <a class="text-link" href="https://github.com/xiongwang3781" target="_blank" rel="noopener">Explore code on GitHub</a>
       </div>
     </section>
 
-    <section id="link" class="card">
-      <h2>Resources</h2>
-      <div class="links-grid">
-        <div>
-          <h3>Physical Properties</h3>
-          <ul>
-            <li><a href="https://github.com/xinzhong0708/EWave" target="_blank">E-Wave software</a></li>
-            <li><a href="https://umaine.edu/mecheng/vel/software/tesa_toolbox/" target="_blank">TESA Toolbox</a></li>
-            <li><a href="https://www1.gly.bris.ac.uk/MSAT/" target="_blank">MSAT Toolkit</a></li>
-            <li><a href="https://github.com/DaveHealy-github/AnisoVis" target="_blank">Mineral Cij database</a></li>
-            <li><a href="https://github.com/marcoalopez/PyRockWave" target="_blank">PyRockWave</a></li>
-            <li><a href="https://github.com/ShouchengHan/USTClitho2.0" target="_blank">USTClitho2.0</a></li>
-            <li><a href="http://ciei.colorado.edu/Models/" target="_blank">CU-Boulder 3D Models</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3>Geochemistry</h3>
-          <ul>
-            <li><a href="https://github.com/NilsGies/MinPlotX" target="_blank">MinPlotX (EMPA)</a></li>
-            <li><a href="https://apps.sgb.gov.br/qmin/" target="_blank">Qmin (Virtual Assistant)</a></li>
-            <li><a href="https://github.com/maoji0819/ICPMSDataCal-Py" target="_blank">ICPMSDataCal-Py</a></li>
-            <li><a href="https://www.diffusup.org/" target="_blank">DIFFUSUP (Modeling)</a></li>
-            <li><a href="https://github.com/liguangwu/diffuser" target="_blank">Diffuser (Single element)</a></li>
-            <li><a href="https://thermobar.readthedocs.io/en/latest/index.html" target="_blank">Thermobar (Python)</a></li>
-            <li><a href="https://igdrasil.shinyapps.io/MagmaTaBv4/" target="_blank">MagMaTaB</a></li>
-          </ul>
+    <section id="progress" class="section section-light">
+      <div class="section-heading">
+        <p class="eyebrow">Progress</p>
+        <h2>Google Scholar publication and citation snapshot</h2>
+        <p>
+          A compact, static snapshot prepared from the Google Scholar profile link, so the GitHub Pages site remains reliable without live scraping.
+        </p>
+        <div class="source-row">
+          <a href="https://scholar.google.com/citations?hl=en&amp;user=0ugogQ0AAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener">Open Google Scholar profile</a>
+          <span id="scholarUpdated">Snapshot source: Google Scholar</span>
         </div>
       </div>
-    </section>
-    
-    <section id="progress" class="card">
-      <h2>Academic Impact</h2>
-      <div style="position: relative; height: 350px; width: 100%;">
-        <canvas id="progressChart"></canvas>
+      <div class="scholar-stats" aria-label="Google Scholar snapshot summary">
+        <article>
+          <span id="statPublications">6</span>
+          <p>Publications tracked</p>
+        </article>
+        <article>
+          <span id="statCitations">82</span>
+          <p>Citations in snapshot</p>
+        </article>
+        <article>
+          <span>Manual</span>
+          <p>Static GitHub Pages update</p>
+        </article>
+      </div>
+      <div class="chart-panel">
+        <canvas id="progressChart" aria-label="Cumulative publication and citation chart" role="img"></canvas>
       </div>
     </section>
 
+    <section id="contact" class="section contact-section">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2>Open to scientific collaboration and research-code exchange</h2>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:xiong.wang3781@outlook.com">xiong.wang3781@outlook.com</a>
+        <a href="https://github.com/xiongwang3781" target="_blank" rel="noopener">github.com/xiongwang3781</a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2025 Xiong Wang. Designed with Dark Matter.</p>
+  <footer class="site-footer">
+    <p>&copy; 2026 Xiong Wang. All rights reserved.</p>
   </footer>
 
   <script>
-    /* =========================================
-       1. 炫酷光标逻辑
-       ========================================= */
-    const cursorDot = document.getElementById('cursor-dot');
-    const cursorOutline = document.getElementById('cursor-outline');
-    
-    window.addEventListener('mousemove', function(e) {
-      const posX = e.clientX;
-      const posY = e.clientY;
-      cursorDot.style.left = `${posX}px`;
-      cursorDot.style.top = `${posY}px`;
-      cursorOutline.animate({
-        left: `${posX}px`,
-        top: `${posY}px`
-      }, { duration: 500, fill: "forwards" });
-    });
-
-    const interactiveElements = document.querySelectorAll('a, button, .project-item, .nav-link, .tag-cloud a');
-
-    interactiveElements.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        document.body.classList.add('hovering');
-      });
-      el.addEventListener('mouseleave', () => {
-        document.body.classList.remove('hovering');
-      });
-    });
-
-    window.addEventListener('mousedown', () => {
-      document.body.classList.add('clicking');
-    });
-    window.addEventListener('mouseup', () => {
-      document.body.classList.remove('clicking');
-    });
-
-    /* =========================================
-       2. 导航栏高亮逻辑 (优化版)
-       ========================================= */
     const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('section');
+    const sections = Array.from(document.querySelectorAll('main section[id]'));
 
     function onScroll() {
-      let current = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (window.pageYOffset >= sectionTop - 250) { // 增加偏移量，让高亮更早触发
-          current = section.getAttribute('id');
+      const offset = 120;
+      const scrollPos = window.scrollY;
+      let currentId = sections[0].id;
+
+      for (const section of sections) {
+        if (section.offsetTop - offset <= scrollPos) {
+          currentId = section.id;
         }
-      });
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-          link.classList.add('active');
-        }
+      }
+
+      navLinks.forEach((link) => {
+        link.classList.toggle('active', link.getAttribute('href') === '#' + currentId);
       });
     }
-    window.addEventListener('scroll', onScroll);
 
-    /* =========================================
-       3. 图表配置 (Chart.js)
-       ========================================= */
-    const ctx = document.getElementById('progressChart').getContext('2d');
-    
-    const years = ['2019', '2020', '2021', '2022', '2023', '2024'];
-    const pubData = [1, 2, 3, 3, 4, 6]; 
-    const citeData = [3, 13, 28, 54, 72, 97];
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    onScroll();
 
-    const gradientPub = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientPub.addColorStop(0, 'rgba(100, 255, 218, 0.4)');
-    gradientPub.addColorStop(1, 'rgba(100, 255, 218, 0.0)');
+    const scholarSnapshot = {
+      profileUrl: 'https://scholar.google.com/citations?hl=en&user=0ugogQ0AAAAJ&view_op=list_works&sortby=pubdate',
+      updated: '2026-05-26',
+      years: ['2019', '2020', '2021', '2022', '2023', '2024'],
+      publicationsByYear: [1, 1, 1, 0, 1, 2],
+      citationsByYear: [43, 19, 14, 0, 4, 2],
+    };
 
-    const gradientCite = ctx.createLinearGradient(0, 0, 0, 400);
-    gradientCite.addColorStop(0, 'rgba(136, 146, 176, 0.4)');
-    gradientCite.addColorStop(1, 'rgba(136, 146, 176, 0.0)');
+    function cumulativeSum(values) {
+      const result = [];
+      values.reduce((sum, value, index) => {
+        result[index] = sum + value;
+        return result[index];
+      }, 0);
+      return result;
+    }
 
-    new Chart(ctx, {
+    const chartElement = document.getElementById('progressChart');
+    const chartContext = chartElement.getContext('2d');
+    const cumulativePublications = cumulativeSum(scholarSnapshot.publicationsByYear);
+    const cumulativeCitations = cumulativeSum(scholarSnapshot.citationsByYear);
+
+    document.getElementById('scholarUpdated').textContent = `Source: Google Scholar profile - snapshot updated ${scholarSnapshot.updated}`;
+    document.getElementById('statPublications').textContent = cumulativePublications.at(-1);
+    document.getElementById('statCitations').textContent = cumulativeCitations.at(-1);
+
+    new Chart(chartContext, {
       type: 'line',
       data: {
-        labels: years,
+        labels: scholarSnapshot.years,
         datasets: [
           {
-            label: 'Publications',
-            data: pubData,
-            borderColor: '#64ffda',
-            backgroundColor: gradientPub,
-            borderWidth: 2,
-            pointBackgroundColor: '#0a192f',
-            pointBorderColor: '#64ffda',
-            pointRadius: 4,
-            pointHoverRadius: 8,
+            label: 'Cumulative publications',
+            data: cumulativePublications,
+            borderColor: '#1f7a6d',
+            backgroundColor: 'rgba(31, 122, 109, 0.12)',
             fill: true,
-            tension: 0.4,
+            tension: 0.35,
+            pointRadius: 4,
+            pointHoverRadius: 7,
+            borderWidth: 3,
             yAxisID: 'y',
           },
           {
-            label: 'Citations',
-            data: citeData,
-            borderColor: '#8892b0',
-            backgroundColor: gradientCite,
-            borderWidth: 2,
-            pointBackgroundColor: '#0a192f',
-            pointBorderColor: '#8892b0',
-            pointRadius: 4,
-            pointHoverRadius: 8,
+            label: 'Cumulative citations',
+            data: cumulativeCitations,
+            borderColor: '#9f6b2f',
+            backgroundColor: 'rgba(159, 107, 47, 0.12)',
             fill: true,
-            tension: 0.4,
+            tension: 0.35,
+            pointRadius: 4,
+            pointHoverRadius: 7,
+            borderWidth: 3,
             yAxisID: 'y1',
-          }
-        ]
+          },
+        ],
       },
       options: {
         responsive: true,
         maintainAspectRatio: false,
         interaction: { mode: 'index', intersect: false },
         plugins: {
-          legend: { labels: { color: '#ccd6f6', font: { family: 'Montserrat' } } },
+          legend: {
+            labels: {
+              color: '#243331',
+              boxWidth: 14,
+              boxHeight: 14,
+              font: { family: 'Inter', size: 13, weight: '600' },
+            },
+          },
           tooltip: {
-            backgroundColor: 'rgba(2, 12, 27, 0.9)',
-            titleColor: '#64ffda',
-            bodyColor: '#ccd6f6',
-            borderColor: '#64ffda',
-            borderWidth: 1
-          }
+            backgroundColor: '#102522',
+            titleColor: '#f7f4ed',
+            bodyColor: '#f7f4ed',
+            padding: 12,
+            callbacks: {
+              title: (items) => `Year: ${items[0].label}`,
+              label: (item) => `${item.dataset.label}: ${item.parsed.y}`,
+            },
+          },
         },
         scales: {
-          x: { grid: { display: false }, ticks: { color: '#8892b0' } },
+          x: {
+            grid: { display: false },
+            ticks: { color: '#63716e', font: { family: 'Inter' } },
+          },
           y: {
-            type: 'linear', display: true, position: 'left',
-            grid: { color: 'rgba(255,255,255,0.05)' },
-            ticks: { color: '#64ffda' },
-            title: { display: true, text: 'Papers', color: '#64ffda' }
+            beginAtZero: true,
+            position: 'left',
+            title: { display: true, text: 'Publications', color: '#1f7a6d' },
+            ticks: { color: '#63716e', precision: 0 },
+            grid: { color: 'rgba(36, 51, 49, 0.08)' },
           },
           y1: {
-            type: 'linear', display: true, position: 'right',
-            grid: { display: false },
-            ticks: { color: '#8892b0' },
-            title: { display: true, text: 'Citations', color: '#8892b0' }
-          }
-        }
-      }
+            beginAtZero: true,
+            position: 'right',
+            title: { display: true, text: 'Citations', color: '#9f6b2f' },
+            ticks: { color: '#63716e', precision: 0 },
+            grid: { drawOnChartArea: false },
+          },
+        },
+      },
     });
   </script>
 </body>
 </html>
-
-
-
