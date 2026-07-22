@@ -1,0 +1,15 @@
+:root {
+  --paper: #fbfaf6;
+  --paper-deep: #f0ede4;
+  --ink: #1b1b1a;
+  --ink-soft: #4f4d47;
+  --cobalt: #1e3fff;
+  --cobalt-dark: #1430ce;
+  --rust: #a6300e;
+  --rule: #d8d2c2;
+  --white: #ffffff;
+  --grid-max: 1440px;
+  --page-pad: clamp(20px, 4vw, 64px);
+  --serif: "Source Serif 4", Georgia, serif;
+  --sans: Archivo, Arial, sans-serif;
+}
